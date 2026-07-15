@@ -5,8 +5,99 @@ const gallerySets = {
     ["R3_01340-ms-j169-4ks.jpg","吐鲁番，托克逊县"],["7RR08498-m3-new-b4ks.jpg","水上胡杨林"],["7RR08720-jxms-x-m-2160s.jpg","喀什古城，老铁匠"],["7RR08779jm-new2021-j169-4ks.jpg","喀什古城"],["7RR09131-xm-2160ms.jpg","轮台县，塔里木胡杨林"],["K7_P0886b-xm-denoi-2160-m.jpg","巴音布鲁克草原"],["R3_01264-m-b4ks.jpg","吐鲁番"],["R3_01320-new-xs-j4ks.jpg","吐鲁番，托克逊县"],["R3_01356acr-new-s-b4k.jpg","轮台县，塔里木胡杨林"],["R3_01438acr-new-s-b4ks-gps.jpg","轮台县，塔里木胡杨林"],["R3_02301-j-2160s.jpg","喀什，牛羊大巴扎"],["R3_02972-m_1-m-filtr7-1-mxxx-m-2160s-gps.jpg","塔什库尔干塔吉克自治县，塔合曼湿地"],["R3_03115_1-new2021-j169s-j4ks-gps.jpg","红其拉甫，冰河"],["R3_03193-x-x-xms-m-m-j4ks-gps.jpg","塔什库尔干塔吉克自治县，古石头城"],["R3_03233Darky-Package-Cityscapes-m-cf-2160-gps.jpg","塔什库尔干塔吉克自治县，古石头城"],["R3_03339_PSMS-j169-m-4ks-gps.jpg","塔什库尔干塔吉克自治县，古石头城"],["R3_03362-new2021-xs-j4k-color-s-gps.jpg","慕士塔格峰"],["R3_03376-new-m-s-m-b4k-gps.jpg","喀拉库勒湖"],["R3_03410_PSMS-x-mm-ms-4ks-gps.jpg","喀拉库勒湖"],["R3_03487-m2025-jjj-2160-gps.jpg","G314公路"],["R3_03611-5-j1'1x-deno-shar-gi-m-2160.jpg","温宿大峡谷"],["R3_03689-xm-bxm-2160-gps.jpg","库车大峡谷"],["R3_03703-new-j-4ks.jpg","尉犁县，罗布人村寨"],["R3_03906-2022-j16'10-deno-sha-gi-sha-x-2160s-gps.jpg","尉犁县，罗布人村寨"],["R3_04387-2022-sky-m-deno-mxj-j1610-2160s-o-gps.jpg","吐鲁番，托克逊县"],["R3_0361619mm-Film-19Tones-Rooftop-1-bj169-4ks.jpg","温宿大峡谷"]]},
   'portraits': {base:'../assets/images/ai/肖像/', ai:true, items:[
     ["East_Asia_2_Gigapixel-2x-m_bloom_2160.jpg","长发","Gemini · Nano Banana 2 · Photoshop · Topaz","2026年1月"],["eskimolan_1c080278-m_bloom_low_2xmz4k-topaz+g.jpg","白马（1）","Midjourney v7 · Photoshop · Topaz","2025年12月"],["eskimolan_bloom_medium_1x_ye.jpg","白马（2）","Midjourney v7 · Photoshop · Topaz","2026年1月"],["eskimolan_bloom_medium_2x_m_2160.jpg","白马（3）","Midjourney v7 · Photoshop · Topaz","2026年1月"],["eskimolan_bloom_medium_2xm_2160_topaz+g-2.jpg","彩妆（1）","Midjourney v7 · Photoshop · Topaz","2025年12月"],["eskimolan_bloom_medium_2xm_2160_topaz+g.jpg","彩妆（2）","Midjourney v7 · Photoshop · Topaz","2025年12月"],["eskimolan_smooch_captured-topaz-cgi-2x-2160v_topaz+g.jpg","抱猫的女孩","Midjourney v7 · Photoshop · Topaz","2025年12月"],["eskimolan_Tibetan_Khampa_warrior_bloom_medium_1xxm-4k-topaz+g.jpg","高原人（1）","Midjourney v7 · Photoshop · Topaz","2025年12月"],["eskimolan_Tibetan_bloom_low_1x_msoft-2160z+g.jpg","高原人（2）","Midjourney v6.1 · Photoshop · Topaz","2025年12月"],["eskimolan_Tibetan_woman-c1e31901_bloom_high_2x _m-4k-topaz+g.jpg","高原人（3）","Midjourney v6.1 · Photoshop · Topaz","2025年12月"],["new-source_bloom_low_1xm-2160-topaz+g.jpg","长者","Midjourney v7 · Photoshop · Topaz","2025年12月"]]},
-  'glory': {base:'../assets/images/ai/光彩/', ai:true, items:[["eskimolan_glory1_2024z.jpg","光彩 I","Midjourney v7","2025年12月"],["eskimolan_glory2_2024z.jpg","光彩 II","Midjourney v7","2025年12月"],["eskimolan_glory3_2024z.jpg","光彩 III","Midjourney v7","2025年12月"],["eskimolan_glory4_2024z.jpg","光彩 IV","Midjourney v7","2025年12月"]]},
+  'glory': {base:'../assets/images/ai/光彩/', ai:true, layout:'quad', items:[["eskimolan_glory1_2024z.jpg","光彩 I","Midjourney v7","2025年12月"],["eskimolan_glory2_2024z.jpg","光彩 II","Midjourney v7","2025年12月"],["eskimolan_glory3_2024z.jpg","光彩 III","Midjourney v7","2025年12月"],["eskimolan_glory4_2024z.jpg","光彩 IV","Midjourney v7","2025年12月"]]},
   'other': {base:'../assets/images/ai/其他/', ai:true, items:[["ChatGPT-Image-21-16-50-bloom-low-2xm-gigapixel-standard-v2-2160h-mz.jpg","Adagio","ChatGPT · Imagine 2","2026年4月"],["eskimolan-405c125763f0-bloom-medium-2x-m-2160z.jpg","咖啡","Midjourney v7","2026年1月"],["eskimolan-long-exposure-topaz-4k-m.jpg","废弃","Midjourney v7","2025年12月"],["eskimolan-stylize-500-raw-sref-topaz-4k.jpg.jpg","暮色","Midjourney v7","2025年12月"],["Gemini_Generated_Image_82u7_Gigapixel-2xx4k_m.jpg","搁浅的 BLUEWAYS 号","Gemini · Nano Banana 2","2025年12月"]]}
 };
 const root=document.querySelector('[data-gallery]');
-if(root){const set=gallerySets[root.dataset.gallery];if(set){set.items.forEach((item,index)=>{const figure=document.createElement('figure');figure.className='gallery-item'+(index%5===0?' wide':'');const img=document.createElement('img');img.src=set.base+encodeURIComponent(item[0]).replace(/%2F/g,'/');img.alt=item[1];img.loading=index<2?'eager':'lazy';img.decoding='async';const caption=document.createElement('figcaption');const title=document.createElement('strong');title.textContent=item[1];caption.append(title);if(set.ai){const details=document.createElement('span');details.textContent=item[2]+' · '+item[3];caption.append(details);}figure.append(img,caption);root.append(figure);});}}
+if(root){
+  const set=gallerySets[root.dataset.gallery];
+  if(set){
+    const isQuad=set.layout==='quad';
+    root.classList.add(isQuad?'gallery-quad':'gallery-index');
+    set.items.forEach((item,index)=>{
+      const figure=document.createElement('figure');
+      figure.className='gallery-item';
+      const link=document.createElement('a');
+      const imageUrl=set.base+encodeURIComponent(item[0]).replace(/%2F/g,'/');
+      link.className='gallery-image-link';
+      link.href=imageUrl;
+      link.dataset.index=index;
+      link.setAttribute('aria-label','查看大图：'+item[1]);
+      const img=document.createElement('img');
+      img.src=imageUrl;
+      img.alt=item[1];
+      img.loading=index<3?'eager':'lazy';
+      img.decoding='async';
+      const caption=document.createElement('figcaption');
+      const title=document.createElement('strong');
+      title.textContent=item[1];
+      caption.append(title);
+      if(set.ai){
+        const details=document.createElement('span');
+        details.textContent=item[2]+' · '+item[3];
+        caption.append(details);
+      }
+      link.append(img);
+      figure.append(link,caption);
+      root.append(figure);
+    });
+    createGalleryViewer(root,set);
+  }
+}
+
+function createGalleryViewer(gallery,set){
+  const viewer=document.createElement('div');
+  viewer.className='gallery-viewer';
+  viewer.hidden=true;
+  viewer.setAttribute('role','dialog');
+  viewer.setAttribute('aria-modal','true');
+  viewer.setAttribute('aria-label','大图观看');
+  viewer.innerHTML='<button class="viewer-close" type="button" aria-label="关闭大图">×</button><button class="viewer-nav viewer-prev" type="button" aria-label="上一幅">←</button><figure><img alt=""><figcaption><strong></strong><span></span></figcaption></figure><button class="viewer-nav viewer-next" type="button" aria-label="下一幅">→</button><p class="viewer-count"></p>';
+  document.body.append(viewer);
+  const image=viewer.querySelector('img');
+  const title=viewer.querySelector('strong');
+  const details=viewer.querySelector('figcaption span');
+  const count=viewer.querySelector('.viewer-count');
+  const closeButton=viewer.querySelector('.viewer-close');
+  let currentIndex=0;
+  let returnFocus=null;
+
+  function show(index){
+    currentIndex=(index+set.items.length)%set.items.length;
+    const item=set.items[currentIndex];
+    image.src=set.base+encodeURIComponent(item[0]).replace(/%2F/g,'/');
+    image.alt=item[1];
+    title.textContent=item[1];
+    details.textContent=set.ai?item[2]+' · '+item[3]:'';
+    count.textContent=(currentIndex+1)+' / '+set.items.length;
+  }
+  function open(index,trigger){
+    returnFocus=trigger;
+    show(index);
+    viewer.hidden=false;
+    document.body.classList.add('viewer-open');
+    closeButton.focus();
+  }
+  function close(){
+    viewer.hidden=true;
+    document.body.classList.remove('viewer-open');
+    image.removeAttribute('src');
+    if(returnFocus) returnFocus.focus();
+  }
+  gallery.addEventListener('click',event=>{
+    const link=event.target.closest('.gallery-image-link');
+    if(!link) return;
+    event.preventDefault();
+    open(Number(link.dataset.index),link);
+  });
+  closeButton.addEventListener('click',close);
+  viewer.querySelector('.viewer-prev').addEventListener('click',()=>show(currentIndex-1));
+  viewer.querySelector('.viewer-next').addEventListener('click',()=>show(currentIndex+1));
+  viewer.addEventListener('click',event=>{if(event.target===viewer) close();});
+  document.addEventListener('keydown',event=>{
+    if(viewer.hidden) return;
+    if(event.key==='Escape') close();
+    if(event.key==='ArrowLeft') show(currentIndex-1);
+    if(event.key==='ArrowRight') show(currentIndex+1);
+  });
+}
