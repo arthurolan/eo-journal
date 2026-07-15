@@ -72,6 +72,40 @@ a { color:inherit; text-decoration:none; }
 .tool-visual img { width:100%; aspect-ratio:4/3; object-fit:cover; }
 .preview-photo { max-width:1100px; margin-left:auto; }
 .preview-photo img { width:100%; max-height:660px; object-fit:cover; }
+.project-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.project-card { position:relative; min-height:520px; overflow:hidden; color:#fff; background:#222; }
+.project-card-wide { grid-column:1 / -1; min-height:min(52vw,700px); }
+.project-card>img { width:100%; height:100%; position:absolute; inset:0; object-fit:cover; transition:transform .7s cubic-bezier(.2,.7,.2,1); }
+.project-card:hover>img { transform:scale(1.025); }
+.project-shade { position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.7),transparent 68%); }
+.project-copy { position:absolute; left:34px; right:34px; bottom:30px; display:flex; flex-direction:column; align-items:flex-start; }
+.project-copy small { margin-bottom:8px; opacity:.72; font-size:11px; letter-spacing:.12em; }
+.project-copy strong { font-family:Georgia,"Songti SC",serif; font-size:clamp(30px,3.5vw,48px); line-height:1.25; font-weight:500; }
+.project-copy em { margin-top:5px; opacity:.8; font-size:13px; font-style:normal; }
+.workshop-tools { margin-top:120px; border-top:1px solid var(--line); }
+.section-heading { padding-top:70px; }
+.section-heading h2 { margin:0; font-family:Georgia,"Songti SC",serif; font-size:clamp(36px,4vw,58px); font-weight:500; }
+.gallery-main { max-width:var(--max); margin:auto; padding:70px 4vw 130px; }
+.gallery-header { max-width:900px; margin:0 auto 80px; text-align:center; }
+.gallery-header h1 { margin:12px 0 22px; font-family:Georgia,"Songti SC",serif; font-size:clamp(46px,7vw,86px); line-height:1.18; font-weight:500; }
+.gallery-header>p:last-child { max-width:680px; margin:0 auto; color:var(--muted); font-size:17px; }
+.gallery-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:70px 24px; align-items:start; }
+.gallery-item { margin:0; }
+.gallery-item.wide { grid-column:1 / -1; }
+.gallery-item img { width:100%; max-height:85vh; object-fit:contain; background:#e8e4dc; }
+.gallery-item figcaption { display:flex; justify-content:space-between; gap:20px; margin-top:12px; color:var(--muted); font-size:12px; }
+.gallery-item figcaption strong { color:var(--ink); font-weight:500; }
+.gallery-note { max-width:760px; margin:0 auto 65px; padding:28px 32px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); color:#55534e; }
+.gallery-back { display:flex; justify-content:center; margin-top:90px; }
+.poem-credit { max-width:760px; margin:0 auto 90px; padding:24px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center; color:var(--muted); font-size:13px; }
+.poem-credit p { margin:3px 0; }
+.poetry-sequence { display:grid; gap:120px; }
+.poetry-piece { margin:0; display:grid; grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr); gap:7vw; align-items:center; }
+.poetry-piece.reverse { grid-template-columns:minmax(280px,.55fr) minmax(0,1.45fr); }
+.poetry-piece.reverse img { order:2; }
+.poetry-piece img { width:100%; max-height:86vh; object-fit:contain; background:#e8e4dc; }
+.poetry-piece figcaption { font-family:Georgia,"Songti SC","Noto Serif CJK SC",serif; font-size:17px; line-height:2; }
+.poetry-piece figcaption p { margin:0 0 1.6em; }
 .article-list { border-top:1px solid var(--line); }
 .article-card { display:grid; grid-template-columns:1.35fr 1fr; gap:7vw; padding:70px 0; align-items:center; }
 .article-card-image { overflow:hidden; background:#ddd8ce; }
@@ -127,6 +161,20 @@ a { color:inherit; text-decoration:none; }
   .tool-item { gap:20px; }
   .tool-index { display:none; }
   .article-card { grid-template-columns:1fr; gap:30px; padding:45px 0 60px; }
+  .project-grid,.gallery-grid { grid-template-columns:1fr; }
+  .project-card,.project-card-wide { grid-column:auto; min-height:72vw; }
+  .project-copy { left:20px; right:20px; bottom:20px; }
+  .workshop-tools { margin-top:80px; }
+  .gallery-main { padding:45px 16px 90px; }
+  .gallery-header { padding:0 8px; margin-bottom:55px; }
+  .gallery-grid { gap:45px; }
+  .gallery-item.wide { grid-column:auto; }
+  .gallery-item figcaption { padding:0 8px; flex-direction:column; gap:2px; }
+  .poem-credit { margin-bottom:60px; }
+  .poetry-sequence { gap:75px; }
+  .poetry-piece,.poetry-piece.reverse { grid-template-columns:1fr; gap:25px; }
+  .poetry-piece.reverse img { order:0; }
+  .poetry-piece figcaption { padding:0 16px; font-size:16px; }
   .article-card h2 { font-size:32px; }
   .story-main { padding-top:35px; }
   .story-header { padding:0 24px; margin-bottom:45px; }
