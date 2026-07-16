@@ -48,6 +48,7 @@ if(root){
 function createGalleryViewer(gallery,set){
   const viewer=document.createElement('div');
   viewer.className='gallery-viewer';
+  viewer.setAttribute('data-copyright-images','');
   viewer.hidden=true;
   viewer.setAttribute('role','dialog');
   viewer.setAttribute('aria-modal','true');
