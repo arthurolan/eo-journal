@@ -1,4 +1,4 @@
-:root { --paper:#f3f0e9; --ink:#151513; --muted:#6f6d66; --line:rgba(21,21,19,.18); --accent:#9b3d2c; --max:1440px; --title-size:clamp(38px,5vw,64px); --article-title-size:30px; }
+:root { --paper:#f3f0e9; --ink:#151513; --muted:#6f6d66; --line:rgba(21,21,19,.18); --accent:#9b3d2c; --max:1440px; --title-size:clamp(36px,4.2vw,56px); --article-title-size:30px; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; color:var(--ink); background:var(--paper); font-family:"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif; font-size:16px; line-height:1.75; }
@@ -47,7 +47,8 @@ a { color:inherit; text-decoration:none; }
 .latest-copy { display:flex; flex-direction:column; align-items:flex-start; gap:26px; }
 .status { display:flex; align-items:center; gap:9px; color:var(--accent); font-size:12px!important; letter-spacing:.08em; }
 .status span { width:7px; height:7px; border-radius:50%; background:var(--accent); }
-.latest-image img { width:100%; aspect-ratio:3/2; object-fit:cover; }
+.latest-image { margin:0; }
+.latest-image img { width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; }
 .latest-image figcaption,.preview-photo p { color:var(--muted); font-size:11px; letter-spacing:.08em; }
 .site-footer { max-width:var(--max); margin:0 auto; padding:70px 6vw 45px; display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:7vw; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
 .site-footer>div>p { max-width:340px; }
@@ -59,9 +60,9 @@ a { color:inherit; text-decoration:none; }
 .page-title h1 { margin:0 0 28px; font-family:Georgia,"Songti SC",serif; font-size:var(--title-size); line-height:1.18; font-weight:500; }
 .page-title>p:last-child { max-width:660px; color:var(--muted); font-size:18px; }
 .prose-layout { display:grid; grid-template-columns:1fr 1.2fr; gap:7vw; align-items:start; }
-.portrait-image img { width:100%; aspect-ratio:3/2; object-fit:cover; }
+.portrait-image img { width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; }
 .prose { max-width:640px; }
-.prose h2 { margin:0 0 22px; padding-top:50px; border-top:1px solid var(--line); font-family:Georgia,"Songti SC",serif; font-size:30px; font-weight:500; }
+.prose h2 { margin:0 0 22px; padding-top:50px; border-top:1px solid var(--line); font-family:Georgia,"Songti SC",serif; font-size:var(--article-title-size); line-height:1.35; font-weight:500; }
 .prose h2:first-child { padding-top:0; border:0; }
 .prose p { margin:0 0 28px; color:#4d4b47; }
 .tool-list { border-top:1px solid var(--line); }
@@ -70,7 +71,7 @@ a { color:inherit; text-decoration:none; }
 .tool-item h2 { margin:12px 0 20px; font-family:Georgia,"Songti SC",serif; font-size:var(--article-title-size); line-height:1.35; font-weight:500; }
 .tool-item p { color:#55534e; }
 .tool-item .muted { font-size:13px; color:var(--muted); }
-.tool-visual img { width:100%; aspect-ratio:3/2; object-fit:cover; }
+.tool-visual img { width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; }
 .preview-photo { max-width:1100px; margin-left:auto; }
 .preview-photo img { width:100%; max-height:660px; object-fit:cover; }
 .project-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
@@ -85,7 +86,7 @@ a { color:inherit; text-decoration:none; }
 .project-copy em { margin-top:5px; opacity:.8; font-size:13px; font-style:normal; }
 .workshop-tools { margin-top:120px; border-top:1px solid var(--line); }
 .section-heading { padding-top:70px; }
-.section-heading h2 { margin:0; font-family:Georgia,"Songti SC",serif; font-size:clamp(36px,4vw,58px); font-weight:500; }
+.section-heading h2 { margin:0; font-family:Georgia,"Songti SC",serif; font-size:clamp(34px,3.4vw,48px); line-height:1.25; font-weight:500; }
 .gallery-main { max-width:var(--max); margin:auto; padding:70px 4vw 130px; border-top:1px solid var(--line); }
 .gallery-header { max-width:900px; margin:0 auto 80px; text-align:center; }
 .gallery-header h1 { margin:12px 0 22px; font-family:Georgia,"Songti SC",serif; font-size:var(--title-size); line-height:1.2; font-weight:500; }
@@ -128,14 +129,14 @@ a { color:inherit; text-decoration:none; }
 .article-list { border-top:1px solid var(--line); }
 .article-card { display:grid; grid-template-columns:1.1fr 1fr; gap:5vw; padding:70px 0; align-items:center; }
 .article-card-image { overflow:hidden; background:#ddd8ce; }
-.article-card-image img { width:100%; aspect-ratio:3/2; object-fit:cover; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+.article-card-image img { width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
 .article-card-image:hover img { transform:scale(1.02); }
 .article-meta { margin:0 0 16px; color:var(--accent); font-size:12px; letter-spacing:.1em; }
 .article-card h2 { margin:0 0 22px; font-family:Georgia,"Songti SC",serif; font-size:var(--article-title-size); line-height:1.35; font-weight:500; }
 .article-card-copy>p:not(.article-meta) { margin:0 0 30px; color:#55534e; }
 .story-main { padding-top:48px; border-top:1px solid var(--line); }
 .story-header { max-width:980px; margin:0 auto 70px; text-align:center; }
-.story-header h1 { margin:15px 0 26px; font-family:Georgia,"Songti SC",serif; font-size:clamp(36px,4.5vw,58px); line-height:1.25; font-weight:500; }
+.story-header h1 { margin:15px 0 26px; font-family:Georgia,"Songti SC",serif; font-size:clamp(34px,4vw,52px); line-height:1.25; font-weight:500; }
 .story-deck { max-width:720px; margin:0 auto; color:var(--muted); font-size:18px; }
 .story-hero { width:min(calc(100% - 4vw),var(--max)); margin:0 auto 90px; }
 .story-hero img { width:100%; max-height:850px; object-fit:cover; }
@@ -150,7 +151,7 @@ a { color:inherit; text-decoration:none; }
 .story-figure img { width:auto; height:auto; max-width:100%; max-height:760px; margin:0 auto; }
 .story-back { display:flex; justify-content:center; margin:0 auto 110px; }
 @media (max-width:800px) {
-  :root { --title-size:40px; --article-title-size:28px; }
+  :root { --title-size:36px; --article-title-size:28px; }
   .site-header { height:70px; padding:0 20px; }
   .brand { font-size:25px; }
   .brand-mark { font-size:26px; }
@@ -207,7 +208,7 @@ a { color:inherit; text-decoration:none; }
   .article-card h2 { font-size:var(--article-title-size); }
   .story-main { padding-top:35px; }
   .story-header { padding:0 24px; margin-bottom:45px; }
-  .story-header h1 { font-size:36px; }
+  .story-header h1 { font-size:32px; }
   .story-deck { font-size:16px; }
   .story-hero { width:100%; margin-bottom:55px; }
   .story-hero figcaption { padding:0 20px; }
