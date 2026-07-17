@@ -70,6 +70,7 @@ a { color:inherit; text-decoration:none; }
 .prose p { margin:0 0 28px; color:#4d4b47; }
 .tool-list { border-top:1px solid var(--line); }
 .tool-item { display:grid; grid-template-columns:70px 1fr 1.25fr; gap:5vw; padding:60px 0; align-items:start; }
+.tool-item + .tool-item { border-top:1px solid var(--line); }
 .tool-index { color:var(--muted); font-size:12px; }
 .tool-item h2 { margin:12px 0 20px; font-family:Georgia,"Songti SC",serif; font-size:var(--article-title-size); line-height:1.35; font-weight:500; }
 .tool-item p { color:#55534e; }
