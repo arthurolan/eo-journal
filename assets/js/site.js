@@ -13,6 +13,12 @@ document.querySelectorAll('[data-year]').forEach((item) => {
   item.textContent = new Date().getFullYear();
 });
 
+const goatCounterScript = document.createElement('script');
+goatCounterScript.async = true;
+goatCounterScript.src = 'https://gc.zgo.at/count.js';
+goatCounterScript.dataset.goatcounter = 'https://eo-arthurolan.goatcounter.com/count';
+document.head.append(goatCounterScript);
+
 const pagePath = window.location.pathname;
 const protectedImageContainers = [];
 
@@ -53,17 +59,17 @@ function hideCopyrightBubble() {
   if (copyrightBubble) copyrightBubble.hidden = true;
 }
 
-function showCopyrightBubble(x, y) {
+function showCopyrightBubble(x, y, message = copyrightMessage) {
   if (!copyrightBubble) {
     copyrightBubble = document.createElement('div');
     copyrightBubble.className = 'copyright-bubble';
-    copyrightBubble.textContent = copyrightMessage;
     copyrightBubble.setAttribute('role', 'status');
     copyrightBubble.setAttribute('aria-live', 'polite');
     document.body.append(copyrightBubble);
   }
 
   window.clearTimeout(copyrightBubbleTimer);
+  copyrightBubble.textContent = message;
   copyrightBubble.hidden = false;
   copyrightBubble.style.left = '0';
   copyrightBubble.style.top = '0';
@@ -133,3 +139,54 @@ document.addEventListener('keydown', (event) => {
 });
 window.addEventListener('scroll', hideCopyrightBubble, { passive: true });
 window.addEventListener('resize', hideCopyrightBubble);
+
+const siteStatsTrigger = document.querySelector('[data-site-stats]');
+let siteStatsRequest;
+
+function getSiteStatsPosition(event) {
+  if (event && Number.isFinite(event.clientX) && Number.isFinite(event.clientY)) {
+    return { x: event.clientX, y: event.clientY };
+  }
+  const bounds = siteStatsTrigger.getBoundingClientRect();
+  return { x: bounds.left + bounds.width / 2, y: bounds.top };
+}
+
+function loadSiteVisitCount() {
+  if (!siteStatsRequest) {
+    siteStatsRequest = fetch('https://eo-arthurolan.goatcounter.com/counter/TOTAL.json')
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((data) => data.count)
+      .catch((error) => {
+        siteStatsRequest = null;
+        throw error;
+      });
+  }
+  return siteStatsRequest;
+}
+
+async function showSiteStats(event) {
+  const position = getSiteStatsPosition(event);
+  showCopyrightBubble(position.x, position.y, '正在读取访问量…');
+  try {
+    const count = await loadSiteVisitCount();
+    showCopyrightBubble(position.x, position.y, `全站累计访问 ${count} 次`);
+  } catch (error) {
+    showCopyrightBubble(position.x, position.y, '访问统计暂时无法读取');
+  }
+}
+
+if (siteStatsTrigger) {
+  siteStatsTrigger.addEventListener('pointerenter', (event) => {
+    if (event.pointerType !== 'touch') showSiteStats(event);
+  });
+  siteStatsTrigger.addEventListener('click', showSiteStats);
+  siteStatsTrigger.addEventListener('focus', showSiteStats);
+  siteStatsTrigger.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    showSiteStats(event);
+  });
+}
