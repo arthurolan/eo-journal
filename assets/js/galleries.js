@@ -3,6 +3,47 @@ const gallerySets = {
     ["R3_06632_PSMS-xjs-4kms-gps.jpg","甘孜藏族自治州，贡嘎雪山"],["7RR3334e-f2mm-new-snow-B-16'9s-2160.jpg","梅里雪山"],["7RR3370-xj-mx-2160.jpg","梅里雪山"],["7RR3532e-new2021-xs-j4ks.jpg","香格里拉，松赞林寺"],["7RR09753-mjx-jxs-j-4ks.jpg","甘孜藏族自治州，白塔寺"],["25_00860-2160-gps.jpg","煨桑，一种祈福的仪式"],["25_01395-jm-2160-gps.jpg","拉卜楞寺"],["25_01401-ai-2160-gps.jpg","拉卜楞寺"],["EO-神山夏诺多吉的日落（奖）.jpg","稻城亚丁，夏诺多吉雪山"],["IMGP1876-enhanced-new-x-j4ks.jpg","拉萨，大昭寺"],["IMGP1877-enhanced-new-mj4ks.jpg","拉萨，大昭寺"],["R3_03558-xs-bj4ks-gps.jpg","阿坝藏族自治州，色达县"],["R3_03560-s-j4ks-gps.jpg","色达佛学院"],["R3_03634-4-5-x-s-j-s-j4ks.jpg","色达佛学院"],["R3_03917-xs-16'9-m4ks-gps.jpg","甘孜藏族自治州，甘孜县"],["R3_04411-2s-m4ks-gps.jpg","甘孜藏族自治州，措卡湖"],["R3_04451-ms-j169-4ks-gps.jpg","稻城亚丁，仙乃日雪山"],["R3_04503-new-s-4ks-gps.jpg","稻城亚丁"],["R3_05790acr-s-j169m-4ks-gps.jpg","稻城亚丁，仙乃日雪山"],["R3_06583-xx-bj4ks-gps.jpg","稻城亚丁，贡嘎冲古"],["R3_06648-169m-adobe4ks-gps.jpg","甘孜藏族自治州，新都桥"]]},
   'xinjiang': {base:'../assets/images/photography/行摄新疆/', items:[
     ["R3_01340-ms-j169-4ks.jpg","吐鲁番，托克逊县"],["7RR08498-m3-new-b4ks.jpg","水上胡杨林"],["7RR08720-jxms-x-m-2160s.jpg","喀什古城，老铁匠"],["7RR08779jm-new2021-j169-4ks.jpg","喀什古城"],["7RR09131-xm-2160ms.jpg","轮台县，塔里木胡杨林"],["K7_P0886b-xm-denoi-2160-m.jpg","巴音布鲁克草原"],["R3_01264-m-b4ks.jpg","吐鲁番"],["R3_01320-new-xs-j4ks.jpg","吐鲁番，托克逊县"],["R3_01356acr-new-s-b4k.jpg","轮台县，塔里木胡杨林"],["R3_01438acr-new-s-b4ks-gps.jpg","轮台县，塔里木胡杨林"],["R3_02301-j-2160s.jpg","喀什，牛羊大巴扎"],["R3_02972-m_1-m-filtr7-1-mxxx-m-2160s-gps.jpg","塔什库尔干塔吉克自治县，塔合曼湿地"],["R3_03115_1-new2021-j169s-j4ks-gps.jpg","红其拉甫，冰河"],["R3_03193-x-x-xms-m-m-j4ks-gps.jpg","塔什库尔干塔吉克自治县，古石头城"],["R3_03233Darky-Package-Cityscapes-m-cf-2160-gps.jpg","塔什库尔干塔吉克自治县，古石头城"],["R3_03339_PSMS-j169-m-4ks-gps.jpg","塔什库尔干塔吉克自治县，古石头城"],["R3_03362-new2021-xs-j4k-color-s-gps.jpg","慕士塔格峰"],["R3_03376-new-m-s-m-b4k-gps.jpg","喀拉库勒湖"],["R3_03410_PSMS-x-mm-ms-4ks-gps.jpg","喀拉库勒湖"],["R3_03487-m2025-jjj-2160-gps.jpg","G314公路"],["R3_03611-5-j1'1x-deno-shar-gi-m-2160.jpg","温宿大峡谷"],["R3_03689-xm-bxm-2160-gps.jpg","库车大峡谷"],["R3_03703-new-j-4ks.jpg","尉犁县，罗布人村寨"],["R3_03906-2022-j16'10-deno-sha-gi-sha-x-2160s-gps.jpg","尉犁县，罗布人村寨"],["R3_04387-2022-sky-m-deno-mxj-j1610-2160s-o-gps.jpg","吐鲁番，托克逊县"],["R3_0361619mm-Film-19Tones-Rooftop-1-bj169-4ks.jpg","温宿大峡谷"]]},
+  'shiguang-jianying': {base:'../assets/images/photography/拾光捡影/', caption:'year', items:[
+    ["25_01723-eo.JPG","拾光捡影，拍摄年份 2025","2025"],
+    ["24_02541-p-1-3-cf-sh-2160-eo.jpg","拾光捡影，拍摄年份 2024","2024"],
+    ["23_07924-NR_1-1-j2160-de-eo.jpg","拾光捡影，拍摄年份 2023","2023"],
+    ["22_00300-jj-f-2160s-o-eo.jpg","拾光捡影，拍摄年份 2022","2022"],
+    ["22_00683mx-2160s-eo.jpg","拾光捡影，拍摄年份 2022","2022"],
+    ["22_01313-x-2160s-o-eo.jpg","拾光捡影，拍摄年份 2022","2022"],
+    ["22_01823-de-x-19Tones-Walker-c-jx-sh-jm4k-eo.jpg","拾光捡影，拍摄年份 2022","2022"],
+    ["22_02728m-de-sh-m-j169-m-2160-eo.jpg","拾光捡影，拍摄年份 2022","2022"],
+    ["22_03337-de-x-19Tones - Walker-c-40%-s-2160-eo.jpg","拾光捡影，拍摄年份 2022","2022"],
+    ["500px-22_00319-en-m-eo.jpg","拾光捡影，拍摄年份 2022","2022"],
+    ["1-2-3-5-jms-x-4ks-eo.jpg","拾光捡影，拍摄年份 2021","2021"],
+    ["01085-01155-8-xms-j4ks-x-eo.jpg","拾光捡影，拍摄年份 2021","2021"],
+    ["7RR07739e-fm-j8ks-50%-eo.jpg","拾光捡影，拍摄年份 2019","2019"],
+    ["7RR07823-1-f-mj-x-2160s-x-eo.jpg","拾光捡影，拍摄年份 2019","2019"],
+    ["7RR09102-2022-x-sha-filt-mx-m-2160-ou-eo.jpg","拾光捡影，拍摄年份 2019","2019"],
+    ["DSC3950-new-2160m-eo.jpg","拾光捡影，拍摄年份 2019","2019"],
+    ["R3_01320-new-xs-j4ks-eo.jpg","拾光捡影，拍摄年份 2019","2019"],
+    ["R3_05534_1-hc-mj-yiou-2160s-B-eo.JPG","拾光捡影，拍摄年份 2019","2019"],
+    ["7RR09222-3-hc-j-m-ms-new-jbw-s-4ks-eo.jpg","拾光捡影，拍摄年份 2018","2018"],
+    ["K1A3797-2jmm-x1-eo.jpg","拾光捡影，拍摄年份 2018","2018"],
+    ["DSC00596-m2160-eo.jpg","拾光捡影，拍摄年份 2015","2015"],
+    ["DSC03364j3mm2160-eo.jpg","拾光捡影，拍摄年份 2015","2015"],
+    ["DSC03630new-xs-b4ks-eo.jpg","拾光捡影，拍摄年份 2015","2015"],
+    ["DSC03891-A4-2160-eo.jpg","拾光捡影，拍摄年份 2015","2015"],
+    ["DSC02621acr-1-x-m-4ks-eo.jpg","拾光捡影，拍摄年份 2014","2014"],
+    ["2012-09-27-0494-new-filt-XBR2x-rain-2160-eo.jpg","拾光捡影，拍摄年份 2012","2012"],
+    ["ART_6498-acr-mm-m-2160s-o-r-eo.jpg","拾光捡影，拍摄年份 2012","2012"],
+    ["IMGP0759mj-m-1-z-mj-2160s-eo.JPG","拾光捡影，拍摄年份 2011","2011"],
+    ["K7_P8201-1-f-Darky Package Cityscapes-jm-2160-o--eo.jpg","拾光捡影，拍摄年份 2011","2011"],
+    ["20D_4599-jx-m+xj-m-new-en-1-cf-fang2160-o-eo.jpg","拾光捡影，拍摄年份 2008","2008"],
+    ["IMGP2736mjp8m-eo.jpg","拾光捡影，拍摄年份 2008","2008"],
+    ["IMGP0331mjmjbw-mm-eo.jpg","拾光捡影，拍摄年份 2006","2006"],
+    ["IMGP1530-enhanced-new2021-s-j169-4ks-eo.jpg","拾光捡影，拍摄年份 2006","2006"],
+    ["IMGP1969+0.6emjm1mp10-mm-enhanced-j169-4ks-eo.jpg","拾光捡影，拍摄年份 2006","2006"],
+    ["IMGP0226-230-Bmm-xx-3840S+g.jpg","拾光捡影，拍摄年份 2005","2005"],
+    ["IMGP9049-2022-giga-denoise-x-shar-2160-mark-eo.jpg","拾光捡影，拍摄年份 2005","2005"],
+    ["IMGP9766acr_1-enhanced-m-j4ks-eo.jpg","拾光捡影，拍摄年份 2005","2005"],
+    ["moon-new-blue-m2160-eo.jpg","拾光捡影，拍摄年份 2002","2002"],
+    ["翡翠岛A-21-2022-2160-eo.jpg","拾光捡影，拍摄年份 2002","2002"]
+  ]},
   'portraits': {base:'../assets/images/ai/肖像/', ai:true, items:[
     ["East_Asia_2_Gigapixel-2x-m_bloom_2160.jpg","长发","Gemini · Nano Banana 2 · Photoshop · Topaz","2026年1月"],["eskimolan_1c080278-m_bloom_low_2xmz4k-topaz+g.jpg","白马（1）","Midjourney v7 · Photoshop · Topaz","2025年12月"],["eskimolan_bloom_medium_1x_ye.jpg","白马（2）","Midjourney v7 · Photoshop · Topaz","2026年1月"],["eskimolan_bloom_medium_2x_m_2160.jpg","白马（3）","Midjourney v7 · Photoshop · Topaz","2026年1月"],["eskimolan_bloom_medium_2xm_2160_topaz+g.jpg","原色","Midjourney v7 · Photoshop · Topaz","2025年12月"],["eskimolan_smooch_captured-topaz-cgi-2x-2160v_topaz+g.jpg","抱猫的女孩","Midjourney v7 · Photoshop · Topaz","2025年12月"],["eskimolan_Tibetan_Khampa_warrior_bloom_medium_1xxm-4k-topaz+g.jpg","高原人（1）","Midjourney v7 · Photoshop · Topaz","2025年12月"],["eskimolan_Tibetan_bloom_low_1x_msoft-2160z+g.jpg","高原人（2）","Midjourney v6.1 · Photoshop · Topaz","2025年12月"],["eskimolan_Tibetan_woman-c1e31901_bloom_high_2x _m-4k-topaz+g.jpg","高原人（3）","Midjourney v6.1 · Photoshop · Topaz","2025年12月"],["eskimolan_portrait_Tibetan_bloom_low_1x-4k-g.jpg","高原人（4）","Midjourney v6.1 · Photoshop · Topaz","2025年12月"],["eskimolan-profile_u1zl4xq_stylize_208c576f_bloom_low_2x2160.jpg","无题","Midjourney v7 · Photoshop · Topaz","2026年3月"],["new-source_bloom_low_1xm-2160-topaz+g.jpg","长者","Midjourney v7 · Photoshop · Topaz","2025年12月"]]},
   'glory': {base:'../assets/images/ai/光彩/', ai:true, layout:'quad', items:[["eskimolan_glory1_2024z.jpg","光彩 I","Midjourney v7","2025年12月"],["eskimolan_glory2_2024z.jpg","光彩 II","Midjourney v7","2025年12月"],["eskimolan_glory3_2024z.jpg","光彩 III","Midjourney v7","2025年12月"],["eskimolan_glory4_2024z.jpg","光彩 IV","Midjourney v7","2025年12月"]]},
@@ -23,6 +64,7 @@ if(root){
       link.href=imageUrl;
       link.dataset.index=index;
       link.setAttribute('aria-label','查看大图：'+item[1]);
+      const captionText=set.caption==='year'?item[2]:item[1];
       const img=document.createElement('img');
       img.src=imageUrl;
       img.alt=item[1];
@@ -30,7 +72,7 @@ if(root){
       img.decoding='async';
       const caption=document.createElement('figcaption');
       const title=document.createElement('strong');
-      title.textContent=item[1];
+      title.textContent=captionText;
       caption.append(title);
       if(set.ai){
         const details=document.createElement('span');
@@ -68,7 +110,7 @@ function createGalleryViewer(gallery,set){
     const item=set.items[currentIndex];
     image.src=set.base+encodeURIComponent(item[0]).replace(/%2F/g,'/');
     image.alt=item[1];
-    title.textContent=item[1];
+    title.textContent=set.caption==='year'?item[2]:item[1];
     details.textContent=set.ai?item[2]+' · '+item[3]:'';
     count.textContent=(currentIndex+1)+' / '+set.items.length;
   }
