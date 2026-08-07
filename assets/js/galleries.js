@@ -1,7 +1,34 @@
 const gallerySets = {
   'qinghai-tibet': {base:'../assets/images/photography/青藏高原/', items:[
     ["R3_06632_PSMS-xjs-4kms-gps.jpg","甘孜藏族自治州，贡嘎雪山"],["7RR3334e-f2mm-new-snow-B-16'9s-2160.jpg","梅里雪山"],["7RR3370-xj-mx-2160.jpg","梅里雪山"],["7RR3532e-new2021-xs-j4ks.jpg","香格里拉，松赞林寺"],["7RR09753-mjx-jxs-j-4ks.jpg","甘孜藏族自治州，白塔寺"],["25_00860-2160-gps.jpg","煨桑，一种祈福的仪式"],["25_01395-jm-2160-gps.jpg","拉卜楞寺"],["25_01401-ai-2160-gps.jpg","拉卜楞寺"],["EO-神山夏诺多吉的日落（奖）.jpg","稻城亚丁，夏诺多吉雪山"],["IMGP1876-enhanced-new-x-j4ks.jpg","拉萨，大昭寺"],["IMGP1877-enhanced-new-mj4ks.jpg","拉萨，大昭寺"],["R3_03558-xs-bj4ks-gps.jpg","阿坝藏族自治州，色达县"],["R3_03560-s-j4ks-gps.jpg","色达佛学院"],["R3_03634-4-5-x-s-j-s-j4ks.jpg","色达佛学院"],["R3_03917-xs-16'9-m4ks-gps.jpg","甘孜藏族自治州，甘孜县"],["R3_04411-2s-m4ks-gps.jpg","甘孜藏族自治州，措卡湖"],["R3_04451-ms-j169-4ks-gps.jpg","稻城亚丁，仙乃日雪山"],["R3_04503-new-s-4ks-gps.jpg","稻城亚丁"],["R3_05790acr-s-j169m-4ks-gps.jpg","稻城亚丁，仙乃日雪山"],["R3_06583-xx-bj4ks-gps.jpg","稻城亚丁，贡嘎冲古"],["R3_06648-169m-adobe4ks-gps.jpg","甘孜藏族自治州，新都桥"]]},
-  'xinjiang': {base:'../assets/images/photography/行摄新疆/', items:[
+  'xinjiang': {base:'../assets/images/photography/行摄新疆/', responsiveBase:'../assets/images/photography/行摄新疆/webp/', gridSizes:'(max-width: 800px) 50vw, 33vw', responsive:[
+    {id:'xj-01',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-02',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-03',width:2400,height:2400,variants:[640,960,1600,2400]},
+    {id:'xj-04',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-05',width:2400,height:1601,variants:[640,960,1600,2400]},
+    {id:'xj-06',width:2400,height:1594,variants:[640,960,1600,2400]},
+    {id:'xj-07',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-08',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-09',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-10',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-11',width:2400,height:1737,variants:[640,960,1600,2400]},
+    {id:'xj-12',width:2400,height:1600,variants:[640,960,1600,2400]},
+    {id:'xj-13',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-14',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-15',width:2400,height:1601,variants:[640,960,1600,2400]},
+    {id:'xj-16',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-17',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-18',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-19',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-20',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-21',width:2400,height:2400,variants:[640,960,1600,2400]},
+    {id:'xj-22',width:1601,height:2400,variants:[640,960,1600,1601]},
+    {id:'xj-23',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'xj-24',width:2400,height:1500,variants:[640,960,1600,2400]},
+    {id:'xj-25',width:2400,height:1500,variants:[640,960,1600,2400]},
+    {id:'xj-26',width:2400,height:1350,variants:[640,960,1600,2400]}
+  ], items:[
     ["R3_01340-ms-j169-4ks.jpg","吐鲁番，托克逊县"],["7RR08498-m3-new-b4ks.jpg","水上胡杨林"],["7RR08720-jxms-x-m-2160s.jpg","喀什古城，老铁匠"],["7RR08779jm-new2021-j169-4ks.jpg","喀什古城"],["7RR09131-xm-2160ms.jpg","轮台县，塔里木胡杨林"],["K7_P0886b-xm-denoi-2160-m.jpg","巴音布鲁克草原"],["R3_01264-m-b4ks.jpg","吐鲁番"],["R3_01320-new-xs-j4ks.jpg","吐鲁番，托克逊县"],["R3_01356acr-new-s-b4k.jpg","轮台县，塔里木胡杨林"],["R3_01438acr-new-s-b4ks-gps.jpg","轮台县，塔里木胡杨林"],["R3_02301-j-2160s.jpg","喀什，牛羊大巴扎"],["R3_02972-m_1-m-filtr7-1-mxxx-m-2160s-gps.jpg","塔什库尔干塔吉克自治县，塔合曼湿地"],["R3_03115_1-new2021-j169s-j4ks-gps.jpg","红其拉甫，冰河"],["R3_03193-x-x-xms-m-m-j4ks-gps.jpg","塔什库尔干塔吉克自治县，古石头城"],["R3_03233Darky-Package-Cityscapes-m-cf-2160-gps.jpg","塔什库尔干塔吉克自治县，古石头城"],["R3_03339_PSMS-j169-m-4ks-gps.jpg","塔什库尔干塔吉克自治县，古石头城"],["R3_03362-new2021-xs-j4k-color-s-gps.jpg","慕士塔格峰"],["R3_03376-new-m-s-m-b4k-gps.jpg","喀拉库勒湖"],["R3_03410_PSMS-x-mm-ms-4ks-gps.jpg","喀拉库勒湖"],["R3_03487-m2025-jjj-2160-gps.jpg","G314公路"],["R3_03611-5-j1'1x-deno-shar-gi-m-2160.jpg","温宿大峡谷"],["R3_03689-xm-bxm-2160-gps.jpg","库车大峡谷"],["R3_03703-new-j-4ks.jpg","尉犁县，罗布人村寨"],["R3_03906-2022-j16'10-deno-sha-gi-sha-x-2160s-gps.jpg","尉犁县，罗布人村寨"],["R3_04387-2022-sky-m-deno-mxj-j1610-2160s-o-gps.jpg","吐鲁番，托克逊县"],["R3_0361619mm-Film-19Tones-Rooftop-1-bj169-4ks.jpg","温宿大峡谷"]]},
   'shiguang-jianying': {base:'../assets/images/photography/拾光捡影/', caption:'year', items:[
     ["25_01723-eo.JPG","拾光捡影，拍摄年份 2025","2025"],
@@ -49,6 +76,32 @@ const gallerySets = {
   'glory': {base:'../assets/images/ai/光彩/', ai:true, layout:'quad', items:[["eskimolan_glory1_2024z.jpg","光彩 I","Midjourney v7","2025年12月"],["eskimolan_glory2_2024z.jpg","光彩 II","Midjourney v7","2025年12月"],["eskimolan_glory3_2024z.jpg","光彩 III","Midjourney v7","2025年12月"],["eskimolan_glory4_2024z.jpg","光彩 IV","Midjourney v7","2025年12月"]]},
   'other': {base:'../assets/images/ai/其他/', ai:true, items:[["eskimolan_Gustave_Klimt_style_gigapixel-standard v2-1.5x2160.jpg","Klimt画风","Midjourney v7","2026年4月"],["eskimolan_drif_86f34916v2-2160.jpg","无题","Midjourney v7","2025年12月"],["eskimolan-405c125763f0-bloom-medium-2x-m-2160z.jpg","咖啡","Midjourney v7","2026年1月"],["eskimolan-long-exposure-topaz-4k-m.jpg","废弃","Midjourney v7","2025年12月"],["eskimolan-stylize-500-raw-sref-topaz-4k.jpg.jpg","暮色","Midjourney v7","2025年12月"],["Gemini_Generated_Image_82u7_Gigapixel-2xx4k_m.jpg","搁浅的 BLUEWAYS 号","Gemini · Nano Banana 2","2025年12月"]]}
 };
+function assetUrl(base,filename){
+  return base+encodeURIComponent(filename).replace(/%2F/g,'/');
+}
+
+function getResponsiveAsset(set,index){
+  return Array.isArray(set.responsive)?set.responsive[index]:null;
+}
+
+function getResponsiveImageInfo(set,index){
+  const responsive=getResponsiveAsset(set,index);
+  if(!responsive) return null;
+  const base=set.responsiveBase||set.base;
+  const previewWidth=responsive.variants.find((width)=>width>=960)||responsive.variants[responsive.variants.length-1];
+  const fullWidth=responsive.variants[responsive.variants.length-1];
+  return {
+    width:responsive.width,
+    height:responsive.height,
+    src:assetUrl(base,`${responsive.id}-w${previewWidth}.webp`),
+    srcset:responsive.variants.map((width)=>`${assetUrl(base,`${responsive.id}-w${width}.webp`)} ${width}w`).join(', '),
+    sizes:set.gridSizes||'100vw',
+    fullSrc:assetUrl(base,`${responsive.id}-w${fullWidth}.webp`),
+    fullSrcset:responsive.variants.map((width)=>`${assetUrl(base,`${responsive.id}-w${width}.webp`)} ${width}w`).join(', '),
+    fullSizes:'100vw'
+  };
+}
+
 const root=document.querySelector('[data-gallery]');
 if(root){
   const set=gallerySets[root.dataset.gallery];
@@ -59,14 +112,26 @@ if(root){
       const figure=document.createElement('figure');
       figure.className='gallery-item';
       const link=document.createElement('a');
-      const imageUrl=set.base+encodeURIComponent(item[0]).replace(/%2F/g,'/');
+      const imageUrl=assetUrl(set.base,item[0]);
+      const responsiveInfo=getResponsiveImageInfo(set,index);
       link.className='gallery-image-link';
-      link.href=imageUrl;
+      link.href=responsiveInfo?responsiveInfo.fullSrc:imageUrl;
       link.dataset.index=index;
+      if(responsiveInfo){
+        link.dataset.fullSrc=responsiveInfo.fullSrc;
+        link.dataset.fullSrcset=responsiveInfo.fullSrcset;
+        link.dataset.fullSizes=responsiveInfo.fullSizes;
+      }
       link.setAttribute('aria-label','查看大图：'+item[1]);
       const captionText=set.caption==='year'?item[2]:item[1];
       const img=document.createElement('img');
-      img.src=imageUrl;
+      img.src=responsiveInfo?responsiveInfo.src:imageUrl;
+      if(responsiveInfo){
+        img.srcset=responsiveInfo.srcset;
+        img.sizes=responsiveInfo.sizes;
+        img.width=responsiveInfo.width;
+        img.height=responsiveInfo.height;
+      }
       img.alt=item[1];
       img.loading=index<3?'eager':'lazy';
       img.decoding='async';
@@ -108,7 +173,10 @@ function createGalleryViewer(gallery,set){
   function show(index){
     currentIndex=(index+set.items.length)%set.items.length;
     const item=set.items[currentIndex];
-    image.src=set.base+encodeURIComponent(item[0]).replace(/%2F/g,'/');
+    const responsiveInfo=getResponsiveImageInfo(set,currentIndex);
+    image.src=responsiveInfo?responsiveInfo.fullSrc:assetUrl(set.base,item[0]);
+    image.srcset=responsiveInfo?responsiveInfo.fullSrcset:'';
+    image.sizes=responsiveInfo?responsiveInfo.fullSizes:'';
     image.alt=item[1];
     title.textContent=set.caption==='year'?item[2]:item[1];
     details.textContent=set.ai?item[2]+' · '+item[3]:'';

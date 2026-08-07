@@ -106,10 +106,12 @@ a { color:inherit; text-decoration:none; }
 .gallery-item figcaption strong { color:var(--ink); font-weight:500; }
 .gallery-index { grid-template-columns:repeat(3,minmax(0,1fr)); gap:54px 30px; }
 .gallery-image-link { display:block; overflow:hidden; background:#e5e0d6; }
-.gallery-index .gallery-image-link img { aspect-ratio:4/3; object-fit:cover; transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .25s ease; }
+.gallery-index .gallery-image-link { aspect-ratio:4/3; }
+.gallery-index .gallery-image-link img { width:100%; height:100%; object-fit:cover; transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .25s ease; }
 .gallery-index .gallery-image-link:hover img { transform:scale(1.025); opacity:.92; }
 .gallery-quad { max-width:1120px; margin:0 auto; gap:20px; }
-.gallery-quad .gallery-image-link img { aspect-ratio:1; object-fit:cover; }
+.gallery-quad .gallery-image-link { aspect-ratio:1; }
+.gallery-quad .gallery-image-link img { width:100%; height:100%; object-fit:cover; }
 .viewer-open { overflow:hidden; }
 .gallery-viewer { position:fixed; inset:0; z-index:100; padding:32px 76px 44px; color:#fff; background:rgba(11,11,10,.96); }
 .gallery-viewer[hidden] { display:none; }
