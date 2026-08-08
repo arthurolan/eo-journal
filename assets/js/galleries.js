@@ -96,6 +96,13 @@ function getResponsiveAsset(set,index){
 
 function getResponsiveImageInfo(set,index){
   const responsive=getResponsiveAsset(set,index);
+  if(!responsive && set.ai){
+    const filename=set.items[index][0];
+    const stem=filename.replace(/\.[^.]+$/,'');
+    const base=(set.base||'')+'webp/';
+    const variants=[640,960,1600];
+    return {src:assetUrl(base,`${stem}-w1600.webp`),srcset:variants.map((width)=>`${assetUrl(base,`${stem}-w${width}.webp`)} ${width}w`).join(', '),sizes:set.gridSizes||'(max-width: 800px) 50vw, 33vw',fullSrc:assetUrl(base,`${stem}-w1600.webp`),fullSrcset:variants.map((width)=>`${assetUrl(base,`${stem}-w${width}.webp`)} ${width}w`).join(', '),fullSizes:'100vw'};
+  }
   if(!responsive) return null;
   const base=set.responsiveBase||set.base;
   const previewWidth=responsive.variants.find((width)=>width>=960)||responsive.variants[responsive.variants.length-1];
