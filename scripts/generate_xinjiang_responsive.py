@@ -3,9 +3,7 @@
 from __future__ import annotations
 
 from datetime import datetime
-from html import escape
 from pathlib import Path
-import re
 
 from PIL import Image, ImageCms
 from PIL.ExifTags import Base, IFD
@@ -61,6 +59,11 @@ EXIF_COPY_TAGS = (
     42036,  # LensModel
 )
 
+AUTHOR = "E.O"
+# EXIF Copyright is an ASCII field. Update this only for files first exported
+# for a new publication year; do not retroactively alter existing exports.
+COPYRIGHT = "Copyright 2026 eomoment.com"
+
 
 def normalize_exif_time(value: str | None) -> str | None:
     if not value:
@@ -86,69 +89,27 @@ def normalize_exif_time(value: str | None) -> str | None:
     return None
 
 
-def normalize_xmp_time(value: str | None) -> str | None:
-    exif_time = normalize_exif_time(value)
-    if not exif_time:
-        return None
-    parsed = datetime.strptime(exif_time, "%Y:%m:%d %H:%M:%S")
-    return parsed.strftime("%Y-%m-%dT%H:%M:%S")
-
-
-def find_xmp_attr(xmp_text: str, attr_name: str) -> str | None:
-    match = re.search(rf"{re.escape(attr_name)}=\"([^\"]+)\"", xmp_text)
-    return match.group(1) if match else None
-
-
-def find_xmp_alt(xmp_text: str, tag_name: str) -> str | None:
-    match = re.search(
-        rf"<{tag_name}>\s*<rdf:Alt>\s*<rdf:li[^>]*>(.*?)</rdf:li>",
-        xmp_text,
-        re.S,
-    )
-    return match.group(1).strip() if match else None
-
-
-def find_xmp_seq(xmp_text: str, tag_name: str) -> str | None:
-    match = re.search(
-        rf"<{tag_name}>\s*<rdf:Seq>\s*<rdf:li>(.*?)</rdf:li>",
-        xmp_text,
-        re.S,
-    )
-    return match.group(1).strip() if match else None
-
-
-def make_output_exif(source: Image.Image, caption: str) -> tuple[bytes, bytes]:
+def make_output_exif(source: Image.Image) -> bytes:
     source_exif = source.getexif()
     source_exif_ifd = source_exif.get_ifd(IFD.Exif)
-    xmp_bytes = source.info.get("xmp", b"")
-    xmp_text = xmp_bytes.decode("utf-8", "ignore") if isinstance(xmp_bytes, (bytes, bytearray)) else ""
-
-    artist = source_exif.get(Base.Artist) or find_xmp_seq(xmp_text, "dc:creator")
-    copyright_text = source_exif.get(Base.Copyright) or find_xmp_alt(xmp_text, "dc:rights")
     capture_raw = None
     for tag in EXIF_DATE_TAGS:
         if source_exif_ifd.get(tag):
             capture_raw = source_exif_ifd.get(tag)
             break
-    capture_raw = (
-        capture_raw
-        or find_xmp_attr(xmp_text, "photoshop:DateCreated")
-        or find_xmp_attr(xmp_text, "xmp:CreateDate")
-        or source_exif.get(Base.DateTime)
-    )
+    capture_raw = capture_raw or source_exif.get(Base.DateTime)
     capture_exif = normalize_exif_time(capture_raw)
-    capture_xmp = normalize_xmp_time(capture_raw)
-    lens_model = source_exif_ifd.get(42036) or find_xmp_attr(xmp_text, "aux:Lens")
+    lens_model = source_exif_ifd.get(42036)
 
     output_exif = Image.Exif()
+    # 保留原片的文字说明；缺失时仍写入空字段，便于以后统一读取。
+    output_exif[Base.ImageDescription] = str(source_exif.get(Base.ImageDescription) or "")
     if source_exif.get(Base.Make):
         output_exif[Base.Make] = source_exif.get(Base.Make)
     if source_exif.get(Base.Model):
         output_exif[Base.Model] = source_exif.get(Base.Model)
-    if artist:
-        output_exif[Base.Artist] = artist
-    if copyright_text:
-        output_exif[Base.Copyright] = copyright_text
+    output_exif[Base.Artist] = AUTHOR
+    output_exif[Base.Copyright] = COPYRIGHT
     if capture_exif:
         output_exif[Base.DateTime] = capture_exif
 
@@ -163,50 +124,13 @@ def make_output_exif(source: Image.Image, caption: str) -> tuple[bytes, bytes]:
     if lens_model:
         output_exif_ifd[42036] = lens_model
 
-    description_xml = (
-        f"<dc:description><rdf:Alt><rdf:li xml:lang=\"x-default\">{escape(caption)}</rdf:li>"
-        f"</rdf:Alt></dc:description>"
-    )
-    creator_xml = (
-        f"<dc:creator><rdf:Seq><rdf:li>{escape(str(artist))}</rdf:li></rdf:Seq></dc:creator>"
-        if artist
-        else ""
-    )
-    rights_xml = (
-        f"<dc:rights><rdf:Alt><rdf:li xml:lang=\"x-default\">{escape(str(copyright_text))}</rdf:li>"
-        f"</rdf:Alt></dc:rights>"
-        if copyright_text
-        else ""
-    )
-    attrs = []
-    if capture_xmp:
-        attrs.append(f'xmp:CreateDate="{capture_xmp}"')
-        attrs.append(f'photoshop:DateCreated="{capture_xmp}"')
-    if lens_model:
-        attrs.append(f'aux:Lens="{escape(str(lens_model))}"')
-    attr_text = (" " + " ".join(attrs)) if attrs else ""
-    output_xmp = (
-        "<?xpacket begin=\"\ufeff\" id=\"W5M0MpCehiHzreSzNTczkc9d\"?>"
-        "<x:xmpmeta xmlns:x=\"adobe:ns:meta/\">"
-        "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">"
-        "<rdf:Description rdf:about=\"\" "
-        "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" "
-        "xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\" "
-        "xmlns:photoshop=\"http://ns.adobe.com/photoshop/1.0/\" "
-        "xmlns:aux=\"http://ns.adobe.com/exif/1.0/aux/\""
-        f"{attr_text}>"
-        f"{description_xml}{creator_xml}{rights_xml}"
-        "</rdf:Description></rdf:RDF></x:xmpmeta>"
-        "<?xpacket end=\"w\"?>"
-    ).encode("utf-8")
-
-    return output_exif.tobytes(), output_xmp
+    return output_exif.tobytes()
 
 
 def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    for index, (filename, caption) in enumerate(CAPTIONS, start=1):
+    for index, (filename, _caption) in enumerate(CAPTIONS, start=1):
         source_path = SOURCE_DIR / filename
         image_id = f"xj-{index:02d}"
 
@@ -215,7 +139,7 @@ def main() -> None:
             widths = [width for width in TARGET_WIDTHS if width <= source.width]
             if source.width not in widths:
                 widths.append(source.width)
-            exif_bytes, xmp_bytes = make_output_exif(source, caption)
+            exif_bytes = make_output_exif(source)
 
             for width in widths:
                 output_path = OUTPUT_DIR / f"{image_id}-w{width}.webp"
@@ -227,7 +151,6 @@ def main() -> None:
                     quality=88,
                     method=6,
                     exif=exif_bytes,
-                    xmp=xmp_bytes,
                     icc_profile=SRGB_PROFILE,
                 )
 
