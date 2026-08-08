@@ -1,3 +1,11 @@
+// Keep the former GitHub Pages address usable during the Cloudflare transition.
+// Preserve the article path, query string, and anchor while moving to the
+// canonical domain.  This intentionally does nothing on the Workers site.
+if (window.location.hostname === 'arthurolan.github.io' && window.location.pathname.startsWith('/eo-journal')) {
+  const targetPath = window.location.pathname.replace(/^\/eo-journal(?=\/|$)/, '') || '/';
+  window.location.replace(`https://eomoment.com${targetPath}${window.location.search}${window.location.hash}`);
+}
+
 const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('.site-nav');
 
