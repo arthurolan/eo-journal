@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>正在前往 E.O图文</title>
+    <script>
+      (() => {
+        const projectPath = '/eo-journal';
+        const path = window.location.pathname.replace(new RegExp(`^${projectPath}(?=/|$)`), '') || '/';
+        window.location.replace(`https://eomoment.com${path}${window.location.search}${window.location.hash}`);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>正在前往 <a id="destination" href="https://eomoment.com/">eomoment.com</a>…</p>
+    <script>
+      document.getElementById('destination').href = `https://eomoment.com${window.location.pathname.replace(/^\/eo-journal(?=\/|$)/, '') || '/'}${window.location.search}${window.location.hash}`;
+    </script>
+  </body>
+</html>
