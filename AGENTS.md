@@ -194,7 +194,7 @@ AI 的职责包括：
 - Cloudflare Worker `eo-journal-site` 是 `eomoment.com` 的正式静态站点发布端；其 `.cloudflare-static/` 部署目录由 `scripts/prepare-cloudflare-static.sh` 临时生成且不会提交到 Git。
 - Cloudflare R2 桶 `eomoment-media` 是公开媒体发布端；其 `.cloudflare-media/` 准备目录由 `scripts/prepare-cloudflare-media.sh` 临时生成且不会提交到 Git。公开图片通过 `media.eomoment.com` 提供。
 - Cloudflare 中的部署副本不是源文件，也不是备份。不得直接在 Cloudflare 中临时修改网页内容；此类修改会与 GitHub 脱节，并在下一次部署时被覆盖。
-- GitHub Pages 保留为旧地址跳转的过渡入口，不再承担正式内容发布或上线核验。
+- GitHub Pages 保留为旧地址跳转的过渡入口，不再承担正式内容发布或上线核验。其发布源固定为独立的 `gh-pages` 分支根目录；该分支只保留轻量 `index.html` 与 `404.html` 跳转页，绝不能改回从 `main` 发布。
 
 需要正式发布时，按以下顺序进行：
 

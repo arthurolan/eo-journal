@@ -4,7 +4,7 @@ E.O图文是 Olan 长期维护的个人图文网站，主要收录摄影作品�
 
 网站采用纯静态网页。GitHub `main` 保存源代码、版本历史和两台电脑之间的同步基准；正式站点由 Cloudflare Workers Static Assets 发布在 `https://eomoment.com`，公开图片由 Cloudflare R2 通过 `https://media.eomoment.com` 提供。
 
-GitHub Pages 目前仅保留为旧地址的过渡入口，会跳转到正式域名，不再是正式发布渠道。
+GitHub Pages 目前仅保留为旧地址的过渡入口，会跳转到正式域名，不再是正式发布渠道。其发布源为独立的 `gh-pages` 分支根目录；该分支只保存轻量跳转页，不能改回从 `main` 发布。
 
 ## 当前发布方式
 
