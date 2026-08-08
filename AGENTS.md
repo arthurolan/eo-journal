@@ -13,7 +13,7 @@
 - 技术学习过程
 - 其他值得长期保存和分享的内容
 
-本项目托管于 GitHub，并通过 GitHub Pages 发布。
+本项目源代码托管于 GitHub。正式网站由 Cloudflare Workers Static Assets 发布在 `eomoment.com`，公开媒体文件由 Cloudflare R2 通过 `media.eomoment.com` 提供。GitHub Pages 目前只保留为旧地址的过渡入口，访问者会跳转到正式域名，不再作为正式发布渠道。
 
 ---
 
@@ -75,7 +75,7 @@
 - 数据处理工具
 - AI 小工具
 
-所有工具均尽量采用纯前端实现，方便直接部署到 GitHub Pages。
+所有工具均尽量采用纯前端实现，方便作为静态网站部署。
 
 AI工坊同时记录与 AI 协作完成的软件、网页、图片、研究及实践经验。
 
@@ -186,6 +186,24 @@ AI 的职责包括：
 
 ---
 
+## 发布架构与流程
+
+日常维护中，必须清楚区分“源文件”“发布副本”和“备份”：
+
+- 本地项目与 GitHub `main` 是唯一的源文件和版本历史。所有内容、网页、样式和图片引用都先在这里修改、检查、提交和推送。
+- Cloudflare Worker `eo-journal-site` 是 `eomoment.com` 的正式静态站点发布端；其 `.cloudflare-static/` 部署目录由 `scripts/prepare-cloudflare-static.sh` 临时生成且不会提交到 Git。
+- Cloudflare R2 桶 `eomoment-media` 是公开媒体发布端；其 `.cloudflare-media/` 准备目录由 `scripts/prepare-cloudflare-media.sh` 临时生成且不会提交到 Git。公开图片通过 `media.eomoment.com` 提供。
+- Cloudflare 中的部署副本不是源文件，也不是备份。不得直接在 Cloudflare 中临时修改网页内容；此类修改会与 GitHub 脱节，并在下一次部署时被覆盖。
+- GitHub Pages 保留为旧地址跳转的过渡入口，不再承担正式内容发布或上线核验。
+
+需要正式发布时，按以下顺序进行：
+
+1. 在本地修改源文件并完成相应检查。
+2. 提交并推送到 GitHub `main`，确认 GitHub 已保存本次源文件与历史。
+3. 如果本次新增或更换了公开图片，先准备并上传对应的 WebP（及仍被页面直接引用的少数 JPG）到 `eomoment-media`；替换图片必须使用新文件名，不能用同一路径覆盖。
+4. 生成 `.cloudflare-static/` 并部署 `eo-journal-site` Worker，使网页引用与 R2 中已经可用的媒体保持一致。
+5. 核验 `https://eomoment.com` 的页面、图片和控制台；图片更新还应检查实际响应和 `cf-cache-status`。当前 GitHub 推送不会自动完成 Cloudflare 部署，发布步骤必须明确执行。
+
 ## Git 工作流程
 
 本项目会在 Mac Studio 和 MacBook 两台电脑上交替维护。GitHub 上的 `main` 分支是两台电脑之间的唯一共同基准。
@@ -205,7 +223,7 @@ AI 的职责包括：
 4. 如果仍有未完成且需要在另一台电脑继续的工作，更新 `HANDOFF.md`；如果已完成，将其恢复为“暂无未完成任务”。
 5. 提交 Commit。
 6. 推送至 GitHub，确认推送成功后才算完成本次交接。
-7. 需要发布时，等待 GitHub Pages 自动发布，再检查线上效果。
+7. 需要正式发布时，按上文“发布架构与流程”部署 Cloudflare Worker；如涉及图片，先完成 R2 上传，再检查 `eomoment.com` 的线上效果。
 
 Commit Summary 应简洁描述本次修改内容。
 
