@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import argparse
 from datetime import datetime
 from pathlib import Path
+import re
 
 from PIL import Image, ImageCms
 from PIL.ExifTags import Base, IFD
@@ -42,6 +44,20 @@ CAPTIONS = [
     ("R3_03906-2022-j16'10-deno-sha-gi-sha-x-2160s-gps.jpg", "尉犁县，罗布人村寨"),
     ("R3_04387-2022-sky-m-deno-mxj-j1610-2160s-o-gps.jpg", "吐鲁番，托克逊县"),
     ("R3_0361619mm-Film-19Tones-Rooftop-1-bj169-4ks.jpg", "温宿大峡谷"),
+]
+
+QINGHAI_FILES = [
+    "R3_06632_PSMS-xjs-4kms-gps.jpg", "7RR3334e-f2mm-new-snow-B-16'9s-2160.jpg",
+    "7RR3370-xj-mx-2160.jpg", "7RR3532e-new2021-xs-j4ks.jpg",
+    "7RR09753-mjx-jxs-j-4ks.jpg", "25_00860-2160-gps.jpg",
+    "25_01395-jm-2160-gps.jpg", "25_01401-ai-2160-gps.jpg",
+    "EO-神山夏诺多吉的日落（奖）.jpg", "IMGP1876-enhanced-new-x-j4ks.jpg",
+    "IMGP1877-enhanced-new-mj4ks.jpg", "R3_03558-xs-bj4ks-gps.jpg",
+    "R3_03560-s-j4ks-gps.jpg", "R3_03634-4-5-x-s-j-s-j4ks.jpg",
+    "R3_03917-xs-16'9-m4ks-gps.jpg", "R3_04411-2s-m4ks-gps.jpg",
+    "R3_04451-ms-j169-4ks-gps.jpg", "R3_04503-new-s-4ks-gps.jpg",
+    "R3_05790acr-s-j169m-4ks-gps.jpg", "R3_06583-xx-bj4ks-gps.jpg",
+    "R3_06648-169m-adobe4ks-gps.jpg",
 ]
 
 EXIF_DATE_TAGS = (36867, 36868)
@@ -127,22 +143,57 @@ def make_output_exif(source: Image.Image) -> bytes:
     return output_exif.tobytes()
 
 
-def main() -> None:
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+def get_gallery_filenames(collection: str) -> list[str]:
+    source = (WORKSPACE / "assets/js/galleries.js").read_text(encoding="utf-8")
+    collection_start = source.index(f"'{collection}':")
+    items_start = source.index("items:[", collection_start) + len("items:[")
+    depth = 1
+    items_end = items_start
+    while depth:
+        if source[items_end] == "[":
+            depth += 1
+        elif source[items_end] == "]":
+            depth -= 1
+        items_end += 1
+    return re.findall(r'\["([^\"]+)"', source[items_start:items_end])
 
-    for index, (filename, _caption) in enumerate(CAPTIONS, start=1):
-        source_path = SOURCE_DIR / filename
-        image_id = f"xj-{index:02d}"
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Generate responsive WebP photography assets.")
+    parser.add_argument("--collection", choices=("xinjiang", "qinghai-tibet", "shiguang-jianying"), default="xinjiang")
+    args = parser.parse_args()
+
+    if args.collection == "shiguang-jianying":
+        source_dir = WORKSPACE / "assets/images/photography/拾光捡影"
+        output_dir = source_dir / "webp"
+        image_prefix = "sg"
+        items = [(filename, "") for filename in get_gallery_filenames(args.collection)]
+    elif args.collection == "qinghai-tibet":
+        source_dir = WORKSPACE / "assets/images/photography/青藏高原"
+        output_dir = source_dir / "webp"
+        image_prefix = "qh"
+        items = [(filename, "") for filename in QINGHAI_FILES]
+    else:
+        source_dir = SOURCE_DIR
+        output_dir = OUTPUT_DIR
+        image_prefix = "xj"
+        items = CAPTIONS
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    for index, (filename, _caption) in enumerate(items, start=1):
+        source_path = source_dir / filename
+        image_id = f"{image_prefix}-{index:02d}"
 
         with Image.open(source_path) as source:
             source.load()
             widths = [width for width in TARGET_WIDTHS if width <= source.width]
-            if source.width not in widths:
+            if not widths:
                 widths.append(source.width)
             exif_bytes = make_output_exif(source)
 
             for width in widths:
-                output_path = OUTPUT_DIR / f"{image_id}-w{width}.webp"
+                output_path = output_dir / f"{image_id}-w{width}.webp"
                 height = round(source.height * width / source.width)
                 resized = source.resize((width, height), Image.Resampling.LANCZOS)
                 resized.save(

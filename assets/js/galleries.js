@@ -1,5 +1,13 @@
 const gallerySets = {
-  'qinghai-tibet': {base:'../assets/images/photography/青藏高原/', items:[
+  'qinghai-tibet': {base:'../assets/images/photography/青藏高原/',responsiveBase:'../assets/images/photography/青藏高原/webp/',gridSizes:'(max-width: 800px) 50vw, 33vw',responsive:[
+    {id:'qh-01',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-02',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-03',width:1600,height:2400,variants:[640,960,1600]},
+    {id:'qh-04',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-05',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-06',width:2400,height:1600,variants:[640,960,1600,2400]},
+    {id:'qh-07',width:2400,height:1600,variants:[640,960,1600,2400]},{id:'qh-08',width:2400,height:1600,variants:[640,960,1600,2400]},{id:'qh-09',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'qh-10',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-11',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-12',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'qh-13',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-14',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-15',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'qh-16',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-17',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-18',width:2400,height:1350,variants:[640,960,1600,2400]},
+    {id:'qh-19',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-20',width:2400,height:1350,variants:[640,960,1600,2400]},{id:'qh-21',width:2400,height:1350,variants:[640,960,1600,2400]}
+  ], items:[
     ["R3_06632_PSMS-xjs-4kms-gps.jpg","甘孜藏族自治州，贡嘎雪山"],["7RR3334e-f2mm-new-snow-B-16'9s-2160.jpg","梅里雪山"],["7RR3370-xj-mx-2160.jpg","梅里雪山"],["7RR3532e-new2021-xs-j4ks.jpg","香格里拉，松赞林寺"],["7RR09753-mjx-jxs-j-4ks.jpg","甘孜藏族自治州，白塔寺"],["25_00860-2160-gps.jpg","煨桑，一种祈福的仪式"],["25_01395-jm-2160-gps.jpg","拉卜楞寺"],["25_01401-ai-2160-gps.jpg","拉卜楞寺"],["EO-神山夏诺多吉的日落（奖）.jpg","稻城亚丁，夏诺多吉雪山"],["IMGP1876-enhanced-new-x-j4ks.jpg","拉萨，大昭寺"],["IMGP1877-enhanced-new-mj4ks.jpg","拉萨，大昭寺"],["R3_03558-xs-bj4ks-gps.jpg","阿坝藏族自治州，色达县"],["R3_03560-s-j4ks-gps.jpg","色达佛学院"],["R3_03634-4-5-x-s-j-s-j4ks.jpg","色达佛学院"],["R3_03917-xs-16'9-m4ks-gps.jpg","甘孜藏族自治州，甘孜县"],["R3_04411-2s-m4ks-gps.jpg","甘孜藏族自治州，措卡湖"],["R3_04451-ms-j169-4ks-gps.jpg","稻城亚丁，仙乃日雪山"],["R3_04503-new-s-4ks-gps.jpg","稻城亚丁"],["R3_05790acr-s-j169m-4ks-gps.jpg","稻城亚丁，仙乃日雪山"],["R3_06583-xx-bj4ks-gps.jpg","稻城亚丁，贡嘎冲古"],["R3_06648-169m-adobe4ks-gps.jpg","甘孜藏族自治州，新都桥"]]},
   'xinjiang': {base:'../assets/images/photography/行摄新疆/', responsiveBase:'../assets/images/photography/行摄新疆/webp/', gridSizes:'(max-width: 800px) 50vw, 33vw', responsive:[
     {id:'xj-01',width:2400,height:1350,variants:[640,960,1600,2400]},
