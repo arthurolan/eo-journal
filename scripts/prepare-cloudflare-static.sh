@@ -7,18 +7,24 @@ set -euo pipefail
 repo_dir="$(cd "$(dirname "$0")/.." && pwd)"
 output_dir="$repo_dir/.cloudflare-static"
 
-rsync -a --delete \
+rsync -a --delete --delete-excluded \
   --exclude='.DS_Store' \
   --exclude='.git/' \
   --exclude='.cloudflare-static/' \
+  --exclude='.cloudflare-media/' \
+  --exclude='.wrangler/' \
   --exclude='.gitignore' \
   --exclude='AGENTS.md' \
+  --exclude='assets/images/' \
+  --exclude='photos_1/' \
   --exclude='HANDOFF.md' \
   --exclude='README.md' \
   --exclude='docs/' \
   --exclude='scripts/' \
   --exclude='wrangler.jsonc' \
   "$repo_dir/" "$output_dir/"
+
+node "$repo_dir/scripts/rewrite-cloudflare-media-urls.mjs" "$output_dir"
 
 printf 'Prepared %s public files in %s\n' \
   "$(find "$output_dir" -type f | wc -l | tr -d ' ')" \
